@@ -1,0 +1,93 @@
+[comment encoding = UTF-8 /]
+[module actionBlockJSSnippetsGenerator('platform:/resource/BlockModelingMetamodel/model/blockModelingMetamodel.ecore')]
+
+
+[template public actionBlockJSSnippetsGenerator(block : ActionBlock)]
+
+[file (block.blockTitleEN.tokenize().toUpperFirst() + 'JSSnippets.js', false, 'UTF-8')]
+/*
+This file contains all the JS code snippets required to add a
+new block to the TekTrain app.
+*/
+
+
+/***********************************************************/
+/*---------- The JS code snippets for app.js file ---------*/
+/***********************************************************/
+case '[block.blockTitleEN.tokenize().toLower()/]':
+    return {
+		[for(input:InputBlock|block.hasInput)]
+		[input.variableName.tokenize().toLower()/]: this.findPropertyValue('[input.variableName.tokenize().toLower()/]', blockData.data),
+		[/for]
+    };
+
+
+
+
+/***********************************************************/
+/*------- The JS code snippets for appBlock.js file -------*/
+/***********************************************************/
+/** Import */
+import [block.blockTitleEN.tokenize().toUpperFirst()/] from "./blockComponents/generated/[block.blockTitleEN.tokenize().toUpperFirst()/]";
+
+/** render snippet */
+  case "[block.blockTitleEN.tokenize().toLower()/]":
+    blockComponents = (
+      <[block.blockTitleEN.tokenize().toUpperFirst()/]
+        ref={ref}
+        blockErrors={blockErrors}
+        blockWarnings={blockWarnings}
+		[for (input: InputBlock | block.hasInput)]		
+				[input.variableName.tokenize().toLower()/]={loadedData === undefined ? undefined : loadedData.[input.variableName.tokenize().toLower()/]}
+		[/for]
+        appHasChanged={this.appHasChanged}
+      />
+    );
+    styleClassName = "[block.blockTitleEN.tokenize().toLower()/]";
+    break;
+
+
+
+/***********************************************************/
+/*------- The JS code snippets for toolbar.js file --------*/
+/***********************************************************/
+<ToolbarBlock
+    key="toolbar[block.blockTitleEN.tokenize().toUpperFirst()/]"
+    name="[block.blockTitleEN.tokenize().toUpperFirst()/]"
+    type="[block.blockTitleEN.tokenize().toLower()/]"
+    isDragModeOn={isDragModeOn}
+    x="0"
+    y="0"
+    handleDragMode={this.handleDragMode}
+    newBlockHandler={this.newBlockHandler}
+	[if block.category.toString().toLower().strstr('movement')]
+	category="move"
+	[else]
+	category="[block.category.toString().toLower()/]"
+	[/if]
+/>
+
+
+
+/***********************************************************/
+/*----- The JS code snippets for toolbarBlock.js file -----*/
+/***********************************************************/
+   case '[block.blockTitleEN.tokenize().toLower()/]':
+        styleClassName = '[block.blockTitleEN.tokenize().toLower()/]';
+		 
+		if((i18n.language == 'en') || (i18n.language == 'en-US')) {
+			text = '[block.blockTitleEL.trim()/]';
+		}
+		else {
+			text = '[block.blockTitleEN/]';
+		}
+
+		if((i18n.language == 'en') || (i18n.language == 'en-US')) {
+			tooltipText = '[block.hasInfo.informationTextEL/]';
+		}
+		else {
+			tooltipText = '[block.hasInfo.informationTextEN/]';
+		}
+        break;
+[/file]
+[/template]

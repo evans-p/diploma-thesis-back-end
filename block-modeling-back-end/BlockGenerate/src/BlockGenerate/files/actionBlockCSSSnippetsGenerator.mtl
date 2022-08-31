@@ -1,0 +1,62 @@
+[comment encoding = UTF-8 /]
+[module actionBlockCSSSnippetsGenerator('platform:/resource/BlockModelingMetamodel/model/blockModelingMetamodel.ecore')]
+
+
+[template public actionBlockCSSSnippetsGenerator(block : ActionBlock)]
+
+[file (block.blockNameEN.tokenize().toUpperFirst() + 'CSSSnippets.css', false, 'UTF-8')]
+/*
+This file contains all the CSS code snippets required to add a
+new block to the TekTrain app.
+*/
+
+/***********************************************************/
+/*-------- The CSS code snippet for Block.css file --------*/
+/***********************************************************/
+.[block.blockNameEN.tokenize().toLower()/] {	
+  width: 180.5px;
+  height: 150px;
+  float: left;
+  position: absolute;
+  background-size: 100% 100%;
+  z-index: 0;
+}
+
+
+
+/***********************************************************/
+/*------ The CSS code snippet for Settings.css file -------*/
+/***********************************************************/
+[for (input : InputBlock | block.hasInput)]
+.[input.variableName.tokenize().toLower()/] {
+  background: url("../icons/settings/[input.variableName.tokenize().toLower()/][input.image.substring(input.image.size()-3, input.image.size())/]") no-repeat;
+  width: 25px;
+  height: 25px;
+  float: left;
+  background-size: 100% 100%;
+  z-index: 0;
+}
+[/for]
+
+
+
+/***********************************************************/
+/*---- The CSS code snippet for ToolbarBlock.css file -----*/
+/***********************************************************/
+.[block.blockNameEN.tokenize().toLower()/] {
+  background: url("../../../../assets/mde/generated_blocks/[block.blockNameEN.tokenize().toLower()/]BlockImage[block.blockImage.substring(block.blockImage.size()-3, block.blockImage.size())/]") no-repeat;
+  background-size: 100% 100%;
+  width: 36px;
+  height: 30px;
+  margin-right: 1%;
+  float: left;
+  z-index: 1;
+  position: relative;
+}
+
+.[block.blockNameEN.tokenize().toLower()/]:hover {
+  filter: drop-shadow(0 0 5px #ffffff);
+}
+
+[/file]
+[/template]

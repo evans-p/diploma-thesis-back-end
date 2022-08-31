@@ -1,0 +1,234 @@
+[comment encoding = UTF-8 /]
+[module actionBlockGenerator('platform:/resource/BlockModelingMetamodel/model/blockModelingMetamodel.ecore')]
+
+
+
+[template public actionBlockGenerator(block : ActionBlock)]
+
+[file (block.blockTitleEN.tokenize().toUpperFirst() + '.js', false, 'UTF-8')]
+import React, {Component} from 'react';
+import '../css/FormStyling.css';
+import {Tooltip, Position} from '@blueprintjs/core';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faInfoCircle} from '@fortawesome/free-solid-svg-icons';
+import i18n from '../../i18n';
+
+import blockImg from "../../../../assets/mde/generated_blocks/[block.blockTitleEN.tokenize().toLower()/]BlockImage[block.blockImage.substring(block.blockImage.size()-3, block.blockImage.size())/]";
+
+
+const TooltipComponent = (textEL, textEN) => (
+  <div
+    style={{
+      maxWidth: "200",
+      maxHeight: "200",
+      overflow: "auto",
+      overflowWrap: "break-all",
+      paddingRight: "5",
+    }}
+  >
+    {i18n.language == "en" || i18n.language !== "en-US" ? textEN : textEL}
+  </div>
+);
+
+class [block.blockTitleEN.tokenize().toUpperFirst()/] extends Component{
+
+	static defaultProps = {
+		[for (input: InputBlock | block.hasInput)]
+		[input.variableName.tokenize().toLower()/]: null,
+		[/for]
+	}
+
+    constructor(props) {
+        super(props);
+        this.state = {
+
+			// generic properties for all blocks
+            blockErrors: props.blockErrors || ['['/][']'/],
+            blockWarnings: props.blockWarnings || ['['/][']'/],
+            errorsIcon: require('../../../../assets/mde/commands/Error-Warning.png'),
+            errorsDisplay: 'none',
+
+			// specific block properties
+			[for (input: InputBlock | block.hasInput)]
+			[input.variableName.tokenize().toLower()/]: this.props.[input.variableName.tokenize().toLower()/],
+			[/for]
+       	};
+
+        this.appHasChanged = props.appHasChanged;
+
+        this.getComponentData = this.getComponentData.bind(this);
+		this.handleOnChange = this.handleOnChange.bind(this);
+	}
+
+
+	 handleOnChange(e) {
+	    this.setState({['['/]e.target.name[']'/]: e.target.value});
+		this.appHasChanged();
+	}
+
+   getComponentData() {
+        const data = ['['/][']'/];
+
+		[for (input: InputBlock | block.hasInput)]
+		data.push({name: '[input.variableName.tokenize().toLower()/]', value: this.state.[input.variableName.tokenize().toLower()/]});
+		[/for]
+
+        return data;
+    }
+
+    componentDidUpdate(prevProps) {
+        const {blockErrors, blockWarnings} = this.props;
+        if ((prevProps.blockErrors !== blockErrors) || (prevProps.blockWarnings !== blockWarnings)) {
+            let display;
+            let icon;
+            if ((blockErrors.length !== 0) && (blockWarnings.length !== 0)) {
+                display = 'block';
+                icon = require('../../../../assets/mde/commands/Error-Warning.png');
+            } else if (blockErrors.length !== 0) {
+                display = 'block';
+                icon = require('../../../../assets/mde/commands/Error.png');
+            } else if (blockWarnings.length !== 0) {
+                display = 'block';
+                icon = require('../../../../assets/mde/commands/Warning.png');
+            } else {
+                display = 'none';
+                icon = require('../../../../assets/mde/commands/Error-Warning.png');
+            }
+
+            this.setState({blockErrors, blockWarnings, errorsIcon: icon, errorsDisplay: display});
+        }
+    }
+
+	render(){
+        const {blockErrors, blockWarnings, errorsDisplay, errorsIcon} = this.state;
+
+        const errorTooltipContent = (
+            <div style={{
+                maxWidth: '200', maxHeight: '200', overflow: 'auto', overflowWrap: 'break-all', paddingRight: '5'
+            }}
+            >
+                {blockErrors.map(error => (
+                    <li key={Math.random()}>{error}</li>
+                ))}
+                {blockWarnings.map(warning => (
+                    <li key={Math.random()}>{warning}</li>
+                ))}
+            </div>
+        );
+		return(
+			<div>
+				<strong>
+				[for (input : InputBlock | block.hasInput)]
+				[if input.oclIsKindOf(SelectInputBlock)]
+					<div style={{position: 'absolute', float: 'left', left: '[32 + 45 * (i-1)/]px', top: '90px', cursor: '[input.iconCursor.toString().toLower()/]'}}>
+				        <Tooltip interactionKind="hover" content={TooltipComponent("[input.infoTextEL/]", "[input.infoTextEN/]")}>
+				            <div className="[input.variableName.replace(' ', '').toLower()/]" />
+				        </Tooltip>
+				    </div>
+				    <select name="[input.variableName.tokenize().toLower()/]" value={this.state.[input.variableName.tokenize().toLower()/]} onChange={this.handleOnChange} className="selectForm" style={{left: '69px', top: '120px', cursor: 'pointer'}}>
+						[for (option : Option | input.oclAsType(SelectInputBlock).hasOptions)]
+				        <option value="[option.optionTextEN.tokenize()/]">
+							{i18n.language == "en" || i18n.language !== "en-US" ? "[option.optionTextEN/]" : "[option.optionTextEL/]"}
+						</option>
+						[/for]
+				    </select>
+				[elseif input.oclIsKindOf(TextInputBlock)]
+		            <div style={{position: 'absolute', float: 'left', left: '[32 + 45 * (i-1)/]px', top: '90px', cursor: '[input.iconCursor.toString().toLower()/]'}}>
+		                <Tooltip interactionKind="hover" content={TooltipComponent("[input.infoTextEL/]", "[input.infoTextEN/]")}>
+		                    <div className="[input.variableName.tokenize().toLower()/]" />
+		                </Tooltip>
+		            </div>
+		            <input
+						type="text"
+						name="[input.variableName.tokenize().toLower()/]"
+						value={this.state.[input.variableName.tokenize().toLower()/]}
+						onChange={this.handleOnChange}
+						className="inputForm"
+						style={{left: '24px', top: '120px', padding: '3'}}
+						defaultValue={i18n.language == "en" || i18n.language !== "en-US" ? "[input.oclAsType(TextInputBlock).defaultValueEN/]" : "[input.oclAsType(TextInputBlock).defaultValueEL/]"}
+						
+					/>
+				[elseif input.oclIsKindOf(IntegerInputBlock)]
+		            <div style={{position: 'absolute', float: 'left', left: '[32 + 45 * (i-1)/]px', top: '90px', cursor: '[input.iconCursor.toString().toLower()/]'}}>
+		                <Tooltip interactionKind="hover" content={TooltipComponent("[input.infoTextEL/]", "[input.infoTextEN/]")}>
+		                    <div className="[input.variableName.tokenize().toLower()/]" />
+		                </Tooltip>
+		            </div>
+		            <input
+						type="number"
+						name="[input.variableName.tokenize().toLower()/]"
+						value={this.state.[input.variableName.tokenize().toLower()/]}
+						onChange={this.handleOnChange}
+						step={1}
+						className="inputForm"
+						style={{left: '24px', top: '120px', padding: '3'}}
+						[if input.oclAsType(IntegerInputBlock).noDefaultValue._not()]
+						defaultValue={[input.oclAsType(IntegerInputBlock).defaultValue/]}
+						[/if]
+						[if input.oclAsType(IntegerInputBlock).noMinValue._not()]
+						min={[input.oclAsType(IntegerInputBlock).minValue/]}
+						[/if]
+						[if input.oclAsType(IntegerInputBlock).noMaxValue._not()]
+						max={[input.oclAsType(IntegerInputBlock).maxValue/]}
+						[/if]
+					/>
+				[elseif input.oclIsKindOf(FloatInputBlock)]
+				    <div style={{position: 'absolute', float: 'left', left: '[32 + 45 * (i-1)/]px', top: '90px', cursor: '[input.iconCursor.toString().toLower()/]'}}>
+		                <Tooltip interactionKind="hover" content={TooltipComponent("[input.infoTextEL/]", "[input.infoTextEN/]")}>
+		                    <div className="[input.variableName.tokenize().toLower()/]" />
+		                </Tooltip>
+		            </div>
+		            <input
+						type="number"
+						name="[input.variableName.tokenize().toLower()/]"
+						value={this.state.[input.variableName.tokenize().toLower()/]}
+						onChange={this.handleOnChange}
+						className="inputForm"
+						style={{left: '24px', top: '120px', padding: '3'}}
+						[if input.oclAsType(FloatInputBlock).noDefaultValue._not()]
+						defaultValue={[input.oclAsType(FloatInputBlock).defaultValue/]}
+						[/if]
+						[if input.oclAsType(FloatInputBlock).noMinValue._not()]
+						min={[input.oclAsType(FloatInputBlock).minValue/]}
+						[/if]
+						[if input.oclAsType(FloatInputBlock).noMaxValue._not()]
+						max={[input.oclAsType(FloatInputBlock).maxValue/]}
+						[/if]
+					/>
+				[/if]	
+				[/for]
+				</strong>
+				<div style={{
+		            width: '180.5', height: '52.5', position: 'absolute', left: '0', top: '0'
+		        }}>
+					<img src={blockImg} style={{width: '45', height: 'auto', position: 'absolute', left: '20', top: '3.75'}}/>
+				</div>
+				<label style={{
+		            width: '180.5', height: '20', position: 'absolute', left: '0', top: '52.5', fontSize: '10'
+		        }}>
+					{i18n.language == "en" || i18n.language !== "en-US" ? "[block.blockTitleEN/]" : "[block.blockTitleEL/]"}
+				</label>
+		        <div style={{
+		            width: '70', height: '25', position: 'absolute', right: '20', top: '18', display: 'flex', justifyContent: 'space-evenly'
+		        }}
+		        >
+		            <Tooltip interactionKind="hover" content={errorTooltipContent} position={Position.RIGHT_TOP}>
+		                <img
+		                    src={errorsIcon}
+		                    alt="Error"
+		                    style={{display: errorsDisplay, width: '25', height: '100%', cursor: 'help'}}
+		                />
+		            </Tooltip>
+		            <Tooltip interactionKind="hover" content={TooltipComponent("[block.hasInfo.informationTextEL/]", "[block.hasInfo.informationTextEL/]")} position={Position.RIGHT_TOP}>
+		                <FontAwesomeIcon icon={faInfoCircle} style={{color: 'rgba(255, 255, 255, 0.75)', width: '25', height: '100%', cursor: '[block.hasInfo.cursor.toString().toLower()/]'}} />
+		            </Tooltip>
+		        </div>
+			</div>
+		);
+	}
+}
+
+export default [block.blockTitleEN.tokenize().toUpperFirst()/];
+
+[/file]
+[/template]

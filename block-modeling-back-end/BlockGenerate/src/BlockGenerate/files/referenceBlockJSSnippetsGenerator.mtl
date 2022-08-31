@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module referenceBlockJSSnippetsGenerator('platform:/resource/BlockModelingMetamodel/model/blockModelingMetamodel.ecore')]
+
+
+[template public referenceBlockJSSnippetsGenerator(block : ReferenceBlock)]
+
+[file (block.blockTitleEN.tokenize().toUpperFirst() + 'JSSnippets.js', false, 'UTF-8')]
+
+[/file]
+[/template]

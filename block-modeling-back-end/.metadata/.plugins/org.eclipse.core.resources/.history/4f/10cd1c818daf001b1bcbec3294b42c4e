@@ -1,0 +1,114 @@
+package blockModeling.webApi;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import blockModeling.Models.ReferenceBlock;
+import blockModeling.Models.ActionBlock;
+import blockModeling.Models.DecisionBlock;
+
+import blockModeling.Generators.DirectoryGenerator;
+
+import blockModeling.Validators.ReferenceBlockValidator;
+import blockModeling.Validators.ActionBlockValidator;
+import blockModeling.Validators.DecisionBlockValidator;
+
+import blockModeling.utils.AppModelParser;
+
+import blockModelingMetamodel.BlockApp;
+
+
+
+
+@RestController
+public class WebAPI {
+	
+	private DirectoryGenerator dGenerator = null;
+	
+	@CrossOrigin
+	@PostMapping("/reference-block")
+	public ReferenceBlock receiveReferenceBlock(@RequestBody ReferenceBlock refBlock) {
+		System.out.println("Receiving Reference Block...\n");
+		
+		ReferenceBlockValidator validator = new ReferenceBlockValidator(refBlock);
+		validator.validate();
+		
+		System.out.println(validator.getBlock());
+		return validator.getBlock();
+	}
+	
+	@CrossOrigin
+	@PostMapping("/action-block")
+	public ActionBlock receiveActionBlock(@RequestBody ActionBlock aBlock) {
+		System.out.println("Receiving Action Block...\n");
+		
+		System.out.println(aBlock);
+		ActionBlockValidator validator = new ActionBlockValidator(aBlock);
+		validator.validate();
+		
+		return validator.getBlock();
+	}
+	
+	@CrossOrigin
+	@PostMapping("/decision-block")
+	public DecisionBlock receiveDecisionBlock(@RequestBody DecisionBlock dBlock) {
+		System.out.println("Receiving Action Block...\n");
+		
+		System.out.println(dBlock);
+		DecisionBlockValidator validator = new DecisionBlockValidator(dBlock);
+		validator.validate();
+		
+		return validator.getBlock();
+	}
+	
+	@CrossOrigin
+	@PostMapping("/deploy-decision-block")
+	public void deployDecisionBlock(@RequestBody DecisionBlock dBlock) {
+		
+		System.out.println("Received Decision Block...\n");
+		// Initialize The Parser, witch creates an ecore model, using the input model.
+		AppModelParser parser = new AppModelParser();
+		System.out.println("Parsing Decision Block...\n");
+		// Create the ecore model.
+		BlockApp app = parser.createDecisionEcoreModel(dBlock);
+		System.out.println("Decision Block Parsed Succesfully!\n");
+		System.out.println(app);
+	}
+	
+	@CrossOrigin
+	@PostMapping("/deploy-action-block")
+	public void deployActionBlock(@RequestBody ActionBlock aBlock) {
+		
+		System.out.println("Received Action Block...\n");
+		// Initialize The Parser, witch creates an ecore model, using the input model.
+		AppModelParser parser = new AppModelParser();
+		System.out.println("Parsing Action Block...\n");
+		// Create the ecore model.
+		BlockApp app = parser.createActionEcoreModel(aBlock);
+		System.out.println("Action Block Parsed Succesfully!\n");
+		System.out.println(app);
+	}
+	
+	@CrossOrigin
+	@PostMapping("/deploy-reference-block")
+	public void deployReferenceBlock(@RequestBody ReferenceBlock refBlock) {
+		
+		System.out.println("Received Reference Block...\n");
+		// Initialize The Parser, witch creates an ecore model, using the input model.
+		AppModelParser parser = new AppModelParser();
+		System.out.println("Parsing Reference Block...\n");
+		// Create the ecore model.
+		BlockApp app = parser.createReferenceEcoreModel(refBlock);
+		System.out.println("Reference Block Parsed Succesfully!\n");
+		System.out.println(app);
+		
+		// Initialize the folder generator. Will be used to create the folders that store all
+		// the files for the block, including the ecore model.
+		this.dGenerator = new DirectoryGenerator("/home/evans-p/Downloads/BlockModelingBackend/Resources/");
+		
+		// Create the base directory.
+		dGenerator.createBaseDirectory("Reference-Block");
+	}
+}

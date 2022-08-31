@@ -1,0 +1,43 @@
+/*
+This file contains all the CSS code snippets required to add a
+new block to the TekTrain app.
+*/
+
+/***********************************************************/
+/*-------- The CSS code snippet for Block.css file --------*/
+/***********************************************************/
+.action {	
+  width: 180.5px;
+  height: 150px;
+  float: left;
+  position: absolute;
+  background-size: 100% 100%;
+  z-index: 0;
+}
+
+
+
+/***********************************************************/
+/*------ The CSS code snippet for Settings.css file -------*/
+/***********************************************************/
+
+
+
+/***********************************************************/
+/*---- The CSS code snippet for ToolbarBlock.css file -----*/
+/***********************************************************/
+.action {
+  background: url("../../../../assets/mde/generated_blocks/actionBlockImage.png") no-repeat;
+  background-size: 100% 100%;
+  width: 36px;
+  height: 30px;
+  margin-right: 1%;
+  float: left;
+  z-index: 1;
+  position: relative;
+}
+
+.action:hover {
+  filter: drop-shadow(0 0 5px #ffffff);
+}
+

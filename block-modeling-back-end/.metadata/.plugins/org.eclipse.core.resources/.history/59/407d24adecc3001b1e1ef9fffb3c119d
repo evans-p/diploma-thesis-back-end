@@ -1,0 +1,145 @@
+package blockModeling.Models;
+
+import java.util.ArrayList;
+
+import org.springframework.web.multipart.MultipartFile;
+
+
+
+public class ActionBlock extends Block{
+	
+	private String blockTitleEL;
+	private String blockTitleEN;
+	private String blockImage;
+	private MultipartFile image;
+	private String titleBackroundColor;
+	private boolean hasPopover;
+	private String popoverIcon;
+	private String popoverHelpTextEL;
+	private String popoverHelpTextEN;
+	private SettingsPopover hasSettingsPopover;
+	private Information hasInfo;
+	private ArrayList<InputBlock> hasInput;
+	
+	public ActionBlock() {
+		super();
+	}
+
+	public ActionBlock(String blockTitleEL, String blockTitleEN, String blockImage, String titleBackroundColor,
+			boolean hasPopover, String popoverIcon, String popoverHelpTextEL, String popoverHelpTextEN,
+			SettingsPopover hasSettingsPopover, Information hasInfo, ArrayList<InputBlock> hasInput) {
+		super();
+		this.blockTitleEL = blockTitleEL;
+		this.blockTitleEN = blockTitleEN;
+		this.blockImage = blockImage;
+		this.titleBackroundColor = titleBackroundColor;
+		this.hasPopover = hasPopover;
+		this.popoverIcon = popoverIcon;
+		this.popoverHelpTextEL = popoverHelpTextEL;
+		this.popoverHelpTextEN = popoverHelpTextEN;
+		this.hasSettingsPopover = hasSettingsPopover;
+		this.hasInfo = hasInfo;
+		this.hasInput = hasInput;
+	}
+
+	public String getBlockTitleEL() {
+		return blockTitleEL;
+	}
+
+	public void setBlockTitleEL(String blockTitleEL) {
+		this.blockTitleEL = blockTitleEL;
+	}
+
+	public String getBlockTitleEN() {
+		return blockTitleEN;
+	}
+
+	public void setBlockTitleEN(String blockTitleEN) {
+		this.blockTitleEN = blockTitleEN;
+	}
+
+	public String getBlockImage() {
+		return blockImage;
+	}
+
+	public void setBlockImage(String blockImage) {
+		this.blockImage = blockImage;
+	}
+
+	public String getTitleBackroundColor() {
+		return titleBackroundColor;
+	}
+
+	public void setTitleBackroundColor(String titleBackroundColor) {
+		this.titleBackroundColor = titleBackroundColor;
+	}
+
+	public boolean getHasPopover() {
+		return hasPopover;
+	}
+
+	public void setHasPopover(boolean hasPopover) {
+		this.hasPopover = hasPopover;
+	}
+
+	public String getPopoverIcon() {
+		return popoverIcon;
+	}
+
+	public void setPopoverIcon(String popoverIcon) {
+		this.popoverIcon = popoverIcon;
+	}
+
+	public String getPopoverHelpTextEL() {
+		return popoverHelpTextEL;
+	}
+
+	public void setPopoverHelpTextEL(String popoverHelpTextEL) {
+		this.popoverHelpTextEL = popoverHelpTextEL;
+	}
+
+	public String getPopoverHelpTextEN() {
+		return popoverHelpTextEN;
+	}
+
+	public void setPopoverHelpTextEN(String popoverHelpTextEN) {
+		this.popoverHelpTextEN = popoverHelpTextEN;
+	}
+
+	public SettingsPopover getHasSettingsPopover() {
+		return hasSettingsPopover;
+	}
+
+	public void setHasSettingsPopover(SettingsPopover hasSettingsPopover) {
+		this.hasSettingsPopover = hasSettingsPopover;
+	}
+
+	public Information getHasInfo() {
+		return hasInfo;
+	}
+
+	public void setHasInfo(Information hasInfo) {
+		this.hasInfo = hasInfo;
+	}
+
+	public ArrayList<InputBlock> getHasInput() {
+		return hasInput;
+	}
+
+	public void setHasInput(ArrayList<InputBlock> hasInput) {
+		this.hasInput = hasInput;
+	}
+	
+	public void setInputBlock(int index, InputBlock block) {
+		this.hasInput.set(index, block);
+	}
+
+	@Override
+	public String toString() {
+		return "ActionBlock [blockTitleEL=" + blockTitleEL + ", blockTitleEN=" + blockTitleEN + ", blockImage="
+				+ blockImage + ", titleBackroundColor=" + titleBackroundColor + ", hasPopover=" + hasPopover
+				+ ", popoverIcon=" + popoverIcon + ", popoverHelpTextEL=" + popoverHelpTextEL + ", popoverHelpTextEN="
+				+ popoverHelpTextEN + ", hasSettingsPopover=" + hasSettingsPopover + ", hasInfo=" + hasInfo
+				+ ", hasInput=" + hasInput + "]";
+	}
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.acceleo.ide.ui.launching.launchConfigurationType">
+    <stringAttribute key="org.eclipse.acceleo.ide.ui.ARGUMENTS" value=""/>
+    <booleanAttribute key="org.eclipse.acceleo.ide.ui.COMPUTE_PROFILING" value="false"/>
+    <booleanAttribute key="org.eclipse.acceleo.ide.ui.COMPUTE_TRACEABILITY" value="false"/>
+    <stringAttribute key="org.eclipse.acceleo.ide.ui.LAUNCHING_STRATEGY_DESCRIPTION" value="Acceleo Plug-in Application"/>
+    <stringAttribute key="org.eclipse.acceleo.ide.ui.MODEL_PATH" value="/BlockModelingBackend/Resources/ReferenceBlock-2021-04-09-05-04-05/ecore/ReferenceBlockecoreModel.xmi"/>
+    <stringAttribute key="org.eclipse.acceleo.ide.ui.TARGET_PATH" value="/blockModelingGenerator/generated-files"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/blockModelingGenerator/src/blockModelingGenerator/main/Main.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="blockModelingGenerator.main.Main"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;/home/evans-p/Desktop/block-modeling-back-end/BlockModelingBackend/Resources/ReferenceBlock-2021-04-09-05-04-05/ecore/ReferenceBlockecoreModel.xmi&quot; &quot;/home/evans-p/Desktop/block-modeling-back-end/blockModelingGenerator/generated-files&quot;"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="blockModelingGenerator"/>
+</launchConfiguration>

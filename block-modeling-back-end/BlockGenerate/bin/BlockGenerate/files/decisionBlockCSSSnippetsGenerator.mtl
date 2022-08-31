@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module decisionBlockCSSSnippetsGenerator('platform:/resource/BlockModelingMetamodel/model/blockModelingMetamodel.ecore')]
+
+
+[template public decisionBlockCSSSnippetsGenerator(block : DecisionBlock)]
+
+[file ('decisionBlockCSSSnippets.css', false, 'UTF-8')]
+
+
+[/file]
+[/template]

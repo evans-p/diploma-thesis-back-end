@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="actionBlockCSSSnippetsGenerator" nsURI="BlockGenerate::files::actionBlockCSSSnippetsGenerator" startHeaderPosition="29" endHeaderPosition="640">
+    <input>
+      <takesTypesFrom href="http://www.example.org/blockModelingMetamodel#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="actionBlockCSSSnippetsGenerator" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/*&#xA;This file contains all the CSS code snippets required to add a&#xA;new block to the TekTrain app.&#xA;*/&#xA;&#xA;/***********************************************************/&#xA;/*-------- The CSS code snippet for Block.css file --------*/&#xA;/***********************************************************/&#xA;."/>
+        <body xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/6/Sequence(String)">
+          <source xsi:type="ocl.ecore:OperationCallExp" eType="/6/Sequence(String)" referredOperation="/1/oclstdlib_String_Class/tokenize">
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="block" referredVariable="/0/actionBlockCSSSnippetsGenerator/block">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//Block/blockNameEN"/>
+            </source>
+          </source>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/collect/temp1">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </iterator>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" {&#x9;&#xA;  width: 180.5px;&#xA;  height: 150px;&#xA;  float: left;&#xA;  position: absolute;&#xA;  background-size: 100% 100%;&#xA;  z-index: 0;&#xA;}&#xA;&#xA;&#xA;&#xA;/***********************************************************/&#xA;/*------ The CSS code snippet for Settings.css file -------*/&#xA;/***********************************************************/&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="."/>
+          <body xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/6/Sequence(String)">
+            <source xsi:type="ocl.ecore:OperationCallExp" eType="/6/Sequence(String)" referredOperation="/1/oclstdlib_String_Class/tokenize">
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/input">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//InputBlock"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//InputBlock/variableName"/>
+              </source>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect/temp2">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp2">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </iterator>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" {&#xA;  background: url(&quot;../icons/settings/"/>
+          <body xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/6/Sequence(String)">
+            <source xsi:type="ocl.ecore:OperationCallExp" eType="/6/Sequence(String)" referredOperation="/1/oclstdlib_String_Class/tokenize">
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/input">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//InputBlock"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//InputBlock/variableName"/>
+              </source>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect.1/temp3">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp3">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </iterator>
+          </body>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/input">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//InputBlock"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//InputBlock/image"/>
+            </source>
+            <argument xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/input">
+                    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//InputBlock"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//InputBlock/image"/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/size"/>
+              </source>
+              <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="3">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer_Class/-"/>
+            </argument>
+            <argument xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="input" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/input">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//InputBlock"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//InputBlock/image"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/size"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/substring"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;) no-repeat;&#xA;  width: 25px;&#xA;  height: 25px;&#xA;  float: left;&#xA;  background-size: 100% 100%;&#xA;  z-index: 0;&#xA;}&#xA;"/>
+          <loopVariable name="input">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//InputBlock"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(InputBlock)">
+            <source xsi:type="ocl.ecore:VariableExp" name="block" referredVariable="/0/actionBlockCSSSnippetsGenerator/block">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//ActionBlock/hasInput"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;&#xA;/***********************************************************/&#xA;/*---- The CSS code snippet for ToolbarBlock.css file -----*/&#xA;/***********************************************************/&#xA;."/>
+        <body xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/6/Sequence(String)">
+          <source xsi:type="ocl.ecore:OperationCallExp" eType="/6/Sequence(String)" referredOperation="/1/oclstdlib_String_Class/tokenize">
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="block" referredVariable="/0/actionBlockCSSSnippetsGenerator/block">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//Block/blockNameEN"/>
+            </source>
+          </source>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/collect.1/temp4">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp4">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </iterator>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" {&#xA;  background: url(&quot;../../../../assets/mde/generated_blocks/"/>
+        <body xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/6/Sequence(String)">
+          <source xsi:type="ocl.ecore:OperationCallExp" eType="/6/Sequence(String)" referredOperation="/1/oclstdlib_String_Class/tokenize">
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="block" referredVariable="/0/actionBlockCSSSnippetsGenerator/block">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//Block/blockNameEN"/>
+            </source>
+          </source>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/collect.2/temp5">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp5">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </iterator>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="BlockImage"/>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="block" referredVariable="/0/actionBlockCSSSnippetsGenerator/block">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//ActionBlock/blockImage"/>
+          </source>
+          <argument xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+            <source xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="block" referredVariable="/0/actionBlockCSSSnippetsGenerator/block">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//ActionBlock/blockImage"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/size"/>
+            </source>
+            <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="3">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer_Class/-"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="block" referredVariable="/0/actionBlockCSSSnippetsGenerator/block">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//ActionBlock/blockImage"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/size"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/substring"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;) no-repeat;&#xA;  background-size: 100% 100%;&#xA;  width: 36px;&#xA;  height: 30px;&#xA;  margin-right: 1%;&#xA;  float: left;&#xA;  z-index: 1;&#xA;  position: relative;&#xA;}&#xA;&#xA;."/>
+        <body xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/6/Sequence(String)">
+          <source xsi:type="ocl.ecore:OperationCallExp" eType="/6/Sequence(String)" referredOperation="/1/oclstdlib_String_Class/tokenize">
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="block" referredVariable="/0/actionBlockCSSSnippetsGenerator/block">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//Block/blockNameEN"/>
+            </source>
+          </source>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/collect.3/temp6">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
+          </body>
+          <iterator xsi:type="ocl.ecore:Variable" name="temp6">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </iterator>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=":hover {&#xA;  filter: drop-shadow(0 0 5px #ffffff);&#xA;}&#xA;&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/6/Sequence(String)">
+            <source xsi:type="ocl.ecore:OperationCallExp" eType="/6/Sequence(String)" referredOperation="/1/oclstdlib_String_Class/tokenize">
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="block" referredVariable="/0/actionBlockCSSSnippetsGenerator/block">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/blockModelingMetamodel#//Block/blockNameEN"/>
+              </source>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/actionBlockCSSSnippetsGenerator/%.1/%.9/collect/temp7">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </source>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp7">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </iterator>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="CSSSnippets.css">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="block">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="toUpperFirst">
+        <eAnnotations source="MTL"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+      <eOperations name="tokenize">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="http://www.eclipse.org/acceleo/mtl/3.0/mtlnonstdlib.ecore#//Sequence(String)"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="actionBlockCSSSnippetsGenerator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/actionBlockCSSSnippetsGenerator"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="block">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="blockModelingMetamodel_ActionBlock_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(String)" instanceClassName="java.util.List">
+      <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(InputBlock)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//InputBlock"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//InputBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//InputBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//InputBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//InputBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/actionBlockCSSSnippetsGenerator">
+      <details key="start" value="152"/>
+      <details key="end" value="1988"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/actionBlockCSSSnippetsGenerator/%">
+      <details key="start" value="223"/>
+      <details key="end" value="224"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/actionBlockCSSSnippetsGenerator/%.1">
+      <details key="start" value="224"/>
+      <details key="end" value="1976"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/actionBlockCSSSnippetsGenerator/%.1/%">
+      <details key="start" value="313"/>
+      <details key="end" value="601"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect">
+      <details key="start" value="602"/>
+      <details key="end" value="640"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect/%">
+      <details key="start" value="602"/>
+      <details key="end" value="630"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect/%/%">
+      <details key="start" value="602"/>
+      <details key="end" value="619"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect/%/%/block">
+      <details key="start" value="602"/>
+      <details key="end" value="607"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.1">
+      <details key="start" value="642"/>
+      <details key="end" value="953"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2">
+      <details key="start" value="953"/>
+      <details key="end" value="1300"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%">
+      <details key="start" value="997"/>
+      <details key="end" value="998"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect">
+      <details key="start" value="999"/>
+      <details key="end" value="1038"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect/%">
+      <details key="start" value="999"/>
+      <details key="end" value="1028"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect/%/%">
+      <details key="start" value="999"/>
+      <details key="end" value="1017"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect/%/%/input">
+      <details key="start" value="999"/>
+      <details key="end" value="1004"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.1">
+      <details key="start" value="1040"/>
+      <details key="end" value="1080"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect.1">
+      <details key="start" value="1081"/>
+      <details key="end" value="1120"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect.1/%">
+      <details key="start" value="1081"/>
+      <details key="end" value="1110"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect.1/%/%">
+      <details key="start" value="1081"/>
+      <details key="end" value="1099"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect.1/%/%/input">
+      <details key="start" value="1081"/>
+      <details key="end" value="1086"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect.1/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect.1/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/collect.1/temp3">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.2">
+      <details key="start" value="1123"/>
+      <details key="end" value="1186"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.2/%">
+      <details key="start" value="1123"/>
+      <details key="end" value="1134"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.2/%/input">
+      <details key="start" value="1123"/>
+      <details key="end" value="1128"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.2/%.1">
+      <details key="start" value="1145"/>
+      <details key="end" value="1165"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.2/%.1/%">
+      <details key="start" value="1145"/>
+      <details key="end" value="1163"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.2/%.1/%/%">
+      <details key="start" value="1145"/>
+      <details key="end" value="1156"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.2/%.1/%/%/input">
+      <details key="start" value="1145"/>
+      <details key="end" value="1150"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.2/%.1/%.1">
+      <details key="start" value="1164"/>
+      <details key="end" value="1165"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.2/%.2">
+      <details key="start" value="1167"/>
+      <details key="end" value="1185"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.2/%.2/%">
+      <details key="start" value="1167"/>
+      <details key="end" value="1178"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.2/%.2/%/input">
+      <details key="start" value="1167"/>
+      <details key="end" value="1172"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.3">
+      <details key="start" value="1188"/>
+      <details key="end" value="1294"/>
+      <details key="line" value="32"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/input">
+      <details key="start" value="959"/>
+      <details key="end" value="977"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.4">
+      <details key="start" value="980"/>
+      <details key="end" value="994"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.2/%.4/block">
+      <details key="start" value="980"/>
+      <details key="end" value="985"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.3">
+      <details key="start" value="1301"/>
+      <details key="end" value="1491"/>
+      <details key="line" value="40"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.1">
+      <details key="start" value="1492"/>
+      <details key="end" value="1530"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.1/%">
+      <details key="start" value="1492"/>
+      <details key="end" value="1520"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.1/%/%">
+      <details key="start" value="1492"/>
+      <details key="end" value="1509"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.1/%/%/block">
+      <details key="start" value="1492"/>
+      <details key="end" value="1497"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.1/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.1/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.1/temp4">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.4">
+      <details key="start" value="1532"/>
+      <details key="end" value="1594"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.2">
+      <details key="start" value="1595"/>
+      <details key="end" value="1633"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.2/%">
+      <details key="start" value="1595"/>
+      <details key="end" value="1623"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.2/%/%">
+      <details key="start" value="1595"/>
+      <details key="end" value="1612"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.2/%/%/block">
+      <details key="start" value="1595"/>
+      <details key="end" value="1600"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.2/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.2/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.2/temp5">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.5">
+      <details key="start" value="1635"/>
+      <details key="end" value="1645"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.6">
+      <details key="start" value="1646"/>
+      <details key="end" value="1724"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.6/%">
+      <details key="start" value="1646"/>
+      <details key="end" value="1662"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.6/%/block">
+      <details key="start" value="1646"/>
+      <details key="end" value="1651"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.6/%.1">
+      <details key="start" value="1673"/>
+      <details key="end" value="1698"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.6/%.1/%">
+      <details key="start" value="1673"/>
+      <details key="end" value="1696"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.6/%.1/%/%">
+      <details key="start" value="1673"/>
+      <details key="end" value="1689"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.6/%.1/%/%/block">
+      <details key="start" value="1673"/>
+      <details key="end" value="1678"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.6/%.1/%.1">
+      <details key="start" value="1697"/>
+      <details key="end" value="1698"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.6/%.2">
+      <details key="start" value="1700"/>
+      <details key="end" value="1723"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.6/%.2/%">
+      <details key="start" value="1700"/>
+      <details key="end" value="1716"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.6/%.2/%/block">
+      <details key="start" value="1700"/>
+      <details key="end" value="1705"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.7">
+      <details key="start" value="1726"/>
+      <details key="end" value="1876"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.3">
+      <details key="start" value="1877"/>
+      <details key="end" value="1915"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.3/%">
+      <details key="start" value="1877"/>
+      <details key="end" value="1905"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.3/%/%">
+      <details key="start" value="1877"/>
+      <details key="end" value="1894"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.3/%/%/block">
+      <details key="start" value="1877"/>
+      <details key="end" value="1882"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.3/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.3/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/actionBlockCSSSnippetsGenerator/%.1/collect.3/temp6">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.8">
+      <details key="start" value="1917"/>
+      <details key="end" value="1969"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.9">
+      <details key="start" value="231"/>
+      <details key="end" value="294"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.9/collect">
+      <details key="start" value="231"/>
+      <details key="end" value="274"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.9/collect/%">
+      <details key="start" value="231"/>
+      <details key="end" value="259"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.9/collect/%/%">
+      <details key="start" value="231"/>
+      <details key="end" value="248"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.9/collect/%/%/block">
+      <details key="start" value="231"/>
+      <details key="end" value="236"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.9/collect/%.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.9/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.9/collect/temp7">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.9/%">
+      <details key="start" value="277"/>
+      <details key="end" value="294"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/actionBlockCSSSnippetsGenerator/%.1/%.10">
+      <details key="start" value="303"/>
+      <details key="end" value="310"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/actionBlockCSSSnippetsGenerator/block">
+      <details key="start" value="201"/>
+      <details key="end" value="220"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

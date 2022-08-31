@@ -1,0 +1,50 @@
+[comment encoding = UTF-8 /]
+[module main('platform:/resource/BlockModelingMetamodel/model/blockModelingMetamodel.ecore')]
+
+
+[import BlockGenerate::files::actionBlockGenerator/]
+[import BlockGenerate::files::actionBlockJSSnippetsGenerator/]
+[import BlockGenerate::files::actionBlockCSSSnippetsGenerator/]
+
+[import BlockGenerate::files::referenceBlockGenerator/]
+[import BlockGenerate::files::referenceBlockJSSnippetsGenerator/]
+[import BlockGenerate::files::referenceBlockCSSSnippetsGenerator/]
+
+[import BlockGenerate::files::decisionBlockGenerator/]
+[import BlockGenerate::files::decisionBlockJSSnippetsGenerator/]
+[import BlockGenerate::files::decisionBlockCSSSnippetsGenerator/]
+
+
+[template public generateElement(app : BlockApp)]
+[comment @main/]
+[if app.hasBlock.oclIsKindOf(ActionBlock)]
+[comment]
+The Block of the app is an Action Block. Use the appropriate template
+to generate the code.
+[/comment]
+[app.hasBlock.oclAsType(ActionBlock).actionBlockGenerator()/]
+[app.hasBlock.oclAsType(ActionBlock).actionBlockJSSnippetsGenerator()/]
+[app.hasBlock.oclAsType(ActionBlock).actionBlockCSSSnippetsGenerator()/]
+
+[elseif app.hasBlock.oclIsKindOf(ReferenceBlock)]
+[comment]
+The Block of the app is a Reference Block. Use the appropriate template
+to generate the code.
+[/comment]
+[app.hasBlock.oclAsType(ReferenceBlock).referenceBlockGenerator()/]
+[app.hasBlock.oclAsType(ReferenceBlock).referenceBlockJSSnippetsGenerator()/]
+[app.hasBlock.oclAsType(ReferenceBlock).referenceBlockCSSSnippetsGenerator()/]
+
+[elseif app.hasBlock.oclIsKindOf(DecisionBlock)]
+[comment]
+The Block of the app is a Reference Block. Use the appropriate template
+to generate the code.
+[/comment]
+[app.hasBlock.oclAsType(DecisionBlock).decisionBlockGenerator()/]
+[app.hasBlock.oclAsType(DecisionBlock).decisionBlockJSSnippetsGenerator()/]
+[app.hasBlock.oclAsType(DecisionBlock).decisionBlockCSSSnippetsGenerator()/]
+
+[/if]
+
+
+[/template]

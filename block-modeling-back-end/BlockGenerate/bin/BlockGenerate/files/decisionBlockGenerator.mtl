@@ -1,0 +1,482 @@
+[comment encoding = UTF-8 /]
+[module decisionBlockGenerator('platform:/resource/BlockModelingMetamodel/model/blockModelingMetamodel.ecore')]
+
+
+
+[template public decisionBlockGenerator(block : DecisionBlock)]
+
+[file (block.blockNameEN.tokenize().toUpperFirst() + '.js', false, 'UTF-8')]
+import React, {Component} from 'react';
+import {
+    Tooltip, Popover, Classes, Position
+} from '@blueprintjs/core';
+import i18n from '../../i18n';
+import '../css/FormStyling.css';
+
+const t = (p, values) => i18n.t(p, values);
+
+class [block.blockNameEN.tokenize().toUpperFirst()/] extends Component {
+
+	static defaultProps = {
+		numberOfPaths: 1,
+		data: ['['/][']'/],
+		blockErrors: ['['/][']'/],
+		blockWarnings: ['['/][']'/],
+	}
+
+	constructor(props) {
+		super(props);
+
+		this.pathRefs = ['['/][']'/]
+		this.pathRefs.push(React.createRef());
+
+		this.state = {
+			id: this.props.id,
+			numberOfPaths: this.props.numberOfPaths,
+			data: this.props.data,
+			buttons: this.initializeButtons(),
+			numberHandler: this.props.numberHandler,
+			isDialogOpen: ['['/]false[']'/],
+            blockErrors: props.blockErrors,
+            blockWarnings: props.blockWarnings,
+            errorsIcon: require('../../../../assets/mde/commands/Error-Warning.png'),
+            slotHeight: this.props.slotHeight,
+			divHeights: ['['/]{position: 'absolute', top: '60px', right: '0px'}[']'/],
+            branchDeleteHandler: this.props.branchDeleteHandler,
+            removeIdFromArray: this.props.removeIdFromArray,
+            increaseBranchesHandler: this.props.increaseBranchesHandler,
+		}
+
+		this.appHasChanged = props.appHasChanged;
+
+		#TODO: BINDINGS
+	}
+	
+	getNumberOfPaths(){
+		return this.state.numberOfPaths;
+	}
+
+	getComponentData(){
+		const data = ['['/][']'/];
+		data.push({name: 'numberOfPaths', value: this.state.numberOfPaths});
+		return data;
+	}
+
+	getData(){
+		return this.state.data;
+	}
+
+    slotHeightsRemainSame(prevState) {
+        for (let i = 0; i < this.getNumberOfPaths(); i++) {
+            if (this.state.slotHeight['['/]i[']'/] !== prevState.slotHeight['['/]i[']'/]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    createRefs(startPos, endPos) {
+        for (let i = startPos; i < endPos; i += 1) {
+            this.pathRefs['['/]i[']'/] = React.createRef();
+        }
+    }
+
+    updateButtonContents(iBranches) {
+        const buttonsArray = ['['/][']'/];
+
+        for (let i = 0; i < iBranches; i += 1) {
+            buttonsArray.push(<button key={1} className="diceButton" style={{top: '0px', right: '0px'}} onClick={(e) => {this.openPathDialog(e);}}>{i + 1}</button>)
+        }
+
+        return buttonsArray;
+    }
+
+
+    updateButtonsPositions() {
+        const repositionedDivHeights = ['['/][']'/];
+        let totalHeight = 0;
+
+        for (let i = 0; i < this.state.numberOfPaths; i++) {
+            repositionedDivHeights.push({position: 'absolute', top: `${totalHeight * 160 + 60}px`, right: '0px'});
+            totalHeight += this.state.slotHeight['['/]i[']'/] === undefined ? 1 : this.state.slotHeight['['/]i[']'/];
+        }
+
+        this.setState({divHeights: repositionedDivHeights});
+    }
+
+	initializeButtons(){
+		const paths = this.props.paths;
+		const buttonsArray = ['['/][']'/];
+
+
+	    for (let i = 0; i < paths; i += 1) {
+	      buttonsArray.push(
+	        <button
+	          key={1}
+	          className="diceButton"
+	          style={{ top: "0px", right: "0px" }}
+	          onClick={(e) => {
+	            this.openPathDialog(e);
+	          }}
+	        >
+	          {i + 1}
+	        </button>
+	      );
+	    }
+		
+		return buttonsArray;
+	}
+
+
+	openPathDialog(e){
+	    const buttonId = parseInt(e.target.firstChild.nodeValue) - 1;
+	
+	    this.setState((currentState) => {
+	      const newState = { ...currentState };
+	      newState.isDialogOpen['['/]buttonId[']'/] = true;
+	      return newState;
+	    });
+	}
+	
+	[if block.hasSettingsPopover.oclIsKindOf(SettingsPopover)]
+	getPathDialogContents(i){
+		[if block.hasSettingsPopover.hasForm.oclIsKindOf(LabeledTextInputForm)]
+		let value;
+		
+	    if (this.state.data['['/]i[']'/] === undefined) {
+			if(i18n.language == "en" || i18n.language !== "en-US"){
+				value = [block.hasSettingsPopover.hasForm.oclAsType(LabeledTextInputForm).defaultValueEN/];
+			} else {
+				value = [block.hasSettingsPopover.hasForm.oclAsType(LabeledTextInputForm).defaultValueEL/];
+			}
+	    } else {
+	      value = this.state.data['['/]i[']'/].value;
+	    }
+		[elseif block.hasSettingsPopover.hasForm.oclIsKindOf(LabeledFloatInputForm)]
+		let value;
+		
+	    if (this.state.data['['/]i[']'/] === undefined) {
+			[if block.hasSettingsPopover.hasForm.oclAsType(LabeledFloatInputForm).noDefaultValue]
+			value = 0;
+			[elseif block.hasSettingsPopover.hasForm.oclAsType(LabeledFloatInputForm).noDefaultValue._not()]
+			value = [block.hasSettingsPopover.hasForm.oclAsType(LabeledFloatInputForm).defaultValue/];
+			[/if]	
+	    } else {
+	      value = this.state.data['['/]i[']'/].value;
+	    }
+		[elseif block.hasSettingsPopover.hasForm.oclIsKindOf(LabeledIntegerInputForm)]
+		let value;
+		
+	    if (this.state.data['['/]i[']'/] === undefined) {
+			[if block.hasSettingsPopover.hasForm.oclAsType(LabeledIntegerInputForm).noDefaultValue]
+			value = 0;
+			[elseif block.hasSettingsPopover.hasForm.oclAsType(LabeledIntegerInputForm).noDefaultValue._not()]
+			value = [block.hasSettingsPopover.hasForm.oclAsType(LabeledIntegerInputForm).defaultValue/];
+			[/if]
+	    } else {
+	      value = this.state.data['['/]i[']'/].value;
+	    }
+		[elseif block.hasSettingsPopover.hasForm.oclIsKindOf(ConditionInputForm)]
+	    let leftVariable;
+	    let comparator;
+	    let rightVariable;
+	    let rightVariableType;
+
+		if (this.state.data['['/]i[']'/] === undefined) {
+
+
+			if(i18n.language == "en" || i18n.language !== "en-US"){
+				leftVariable = [block.hasSettingsPopover.hasForm.oclAsType(ConditionInputForm).hasOptions.optionTextEN/];
+				rightVariable = [block.hasSettingsPopover.hasForm.oclAsType(ConditionInputForm).hasOptions.hasOptions.optionTextEN/];
+			} else {
+				leftVariable = [block.hasSettingsPopover.hasForm.oclAsType(ConditionInputForm).hasOptions.optionTextEL/];
+				rightVariable = [block.hasSettingsPopover.hasForm.oclAsType(ConditionInputForm).hasOptions.hasOptions.optionTextEL/];
+			}
+
+		    comparator = [block.hasSettingsPopover.hasForm.oclAsType(ConditionInputForm).hasOptions.comparisonType/];
+
+		    } else {
+		    leftVariable = this.state.data['['/]i[']'/]['['/]0[']'/]['['/]0[']'/].value;
+		    comparator = this.state.data['['/]i[']'/]['['/]0[']'/]['['/]1[']'/].value;
+		    rightVariable = this.state.data['['/]i[']'/]['['/]0[']'/]['['/]2[']'/].value;
+		    rightVariableType = this.state.data['['/]i[']'/]['['/]0[']'/]['['/]2[']'/].rightVariableType;
+		    }
+		[/if]
+
+
+
+
+    return (
+      <div className="popover">
+        <strong>
+          <div type="header" className="conditionDivHeader">
+			{i18n.language == "en" || i18n.language !== "en-US"?[block.hasSettingsPopover.popoverTitleEN/]:[block.hasSettingsPopover.popoverTitleEL/]}
+          </div>
+			
+		  [if block.hasSettingsPopover.hasForm.oclIsKindOf(LabeledIntegerInputForm) or block.hasSettingsPopover.hasForm.oclIsKindOf(LabeledTextInputForm) or block.hasSettingsPopover.hasForm.oclIsKindOf(LabeledFloatInputForm)]
+          <div type="dice" className="randomPath">
+            <DiceElement
+              ref={this.pathRefs['['/]i[']'/]}
+              probability={value}
+            />
+          </div>
+		  [elseif block.hasSettingsPopover.hasForm.oclIsKindOf(ConditionInputForm)]
+          <div type="conditions" className="conditionsGroup">
+            <ConditionGroupElement
+              ref={this.pathRefs['['/]i[']'/]}
+              leftVariable={leftVariable}
+              rightVariable={rightVariable}
+              rightVariableType={rightVariableType}
+              comparator={comparator}
+            />
+          </div>
+		  [/if]
+          <hr />
+          <div type="footer" className="conditionDivFooter">
+            <button
+              type="apply"
+              className="applyButton"
+              onClick={this.applyAndCloseConditionDialog}
+            >
+              {i18n.language == "en" || i18n.language !== "en-US"?"Apply":"Εφαρμογή"}
+            </button>
+            <button
+              type="cancel"
+              className="cancelButton"
+              onClick={this.discardAndCloseConditionDialog}
+            >
+              {i18n.language == "en" || i18n.language !== "en-US"?"Cancel":"Ακύρωση"}
+            </button>
+          </div>
+        </strong>
+      </div>
+    );
+	}
+	[/if]	
+
+	deceasePaths(e, iBranchToDeleteIndex){
+	    const { branchDeleteHandler, removeIdFromArray, id } = this.state;
+	    const { name } = e.target;
+	    const value =
+	      this.state.numberOfPaths - 1 < 1
+	        ? 1
+	        : this.state.numberOfPaths - 1;
+		
+      branchDeleteHandler(id, iBranchToDeleteIndex);
+
+      const {
+        numberOfPaths: prevNumberOfPaths,
+        buttons: prevButtons,
+        divHeights: prevDivHeights,
+      } = this.state;
+
+
+      this.setState((currentState) => {
+        const newState = { ...currentState };
+        // const newDiceButtons = removeIdFromArray(prevDiceButtons, iBranchToDeleteIndex); // .slice(0, value).map(i => i);
+        const newDivHeights = removeIdFromArray(
+          prevDivHeights,
+          iBranchToDeleteIndex
+        ); // .slice(0, value).map(i => i);
+        const newData = removeIdFromArray(
+          this.state.data,
+          iBranchToDeleteIndex
+        ); // .slice(0, value).map(i => i);
+        this.pathRefs = removeIdFromArray(
+          this.pathRefs,
+          iBranchToDeleteIndex
+        ); // .slice(0, value).map(i => i);
+        const newSlotHeight = removeIdFromArray(
+          this.state.slotHeight,
+          iBranchToDeleteIndex
+        );
+
+        newState.divHeights = newDiceDivHeights;
+        newState.buttons = this.updateButtonContents(value);
+        newState.numberOfPaths = value;
+        newState.data = newRandomPathData;
+        newState.slotHeight = newSlotHeight;
+        return newState;
+      });
+
+		this.appHasChanged();
+	}
+
+
+
+  getContents() {
+    const contents = ['['/][']'/];
+
+
+    for (let i = 0; i < this.getNumberOfPaths(); i += 1) {
+      contents['['/]i[']'/] = (
+        <div key={i} style={this.state.divHeights['['/]i[']'/]}>
+          <Popover
+            enforceFocus
+            isOpen={this.state.isDialogOpen['['/]i[']'/]}
+            position="auto"
+            content={this.getPathDialogContents(i)}
+            key={i}
+            target={this.state.buttons['['/]i[']'/]}
+            popoverClassName="custompopover"
+          />
+          <button
+            name="numberOfConditions"
+            className="branchDeleteButton"
+            onClick={(e) => {
+              this.decreaseConditions(e, i);
+            }}
+          />
+        </div>
+      );
+    }
+
+    // console.log(contents);
+
+    return contents;
+  }
+
+
+
+ increasePaths(e) {
+    const { name } = e.target;
+    const value = this.state.numberOfPaths + 1;
+
+      const {
+        numberOfPaths: prevNumberOfPaths,
+        buttons: prevButtons,
+        divHeights: prevDivHeights,
+      } = this.state;
+
+      this.setState((currentState) => {
+        const newState = { ...currentState };
+        const newButtons = ['['/]...prevButtons[']'/];
+        const newDivHeights = ['['/]...prevDivHeights[']'/];
+
+        if (prevNumberOfPaths < value) {
+          // if now there are more random paths
+          const iOldNumberOfPaths = parseInt(prevNumberOfPaths);
+          let totalHeight = 0;
+
+          for (let i = 0; i < value; i++) {
+            totalHeight +=
+              this.state.slotHeight['['/]i[']'/] === undefined
+                ? 1
+                : this.state.slotHeight['['/]i[']'/];
+
+            //        console.log(`totalHeight: ${totalHeight}, this slot's height: ${this.state.slotHeight['['/]i[']'/]}`)
+            if (i >= iOldNumberOfPaths) {
+              const newButtonText = i + 1;
+              this.pathRefs.push(React.createRef());
+              //             console.log(`newButtonText: ${newButtonText} i: ${i} prevNumberOfRandomPaths: ${prevNumberOfRandomPaths} and new number: ${value}`)
+              newDivHeights.push({
+                position: "absolute",
+                top: `${(totalHeight - 1) * 160 + 60}`,
+                right: "0px",
+              });
+              newDiceButtons.push(
+                <button
+                  key={newButtonText}
+                  className="diceButton"
+                  style={{ top: "0px", right: "0px" }}
+                  onClick={(e) => {
+                    this.openPathDialog(e);
+                  }}
+                >
+                  {newButtonText}
+                </button>
+              );
+              this.state.increaseBranchesHandler();
+            }
+          }
+        }
+
+        newState.divHeights = newDivHeights;
+        newState.buttons = newButtons;
+        newState.numberOfPaths = value;
+        return newState;
+      });
+
+    this.appHasChanged();
+  }
+
+
+
+	render(){
+
+    const { blockErrors, blockWarnings, errorsIcon } = this.state;
+
+    const bBlockHasErrors =
+      blockErrors.length === 0 && blockWarnings.length === 0 ? false : true;
+
+    const errorTooltipContent = (
+      <div
+        style={{
+          maxWidth: "200",
+          maxHeight: "200",
+          overflow: "auto",
+          overflowWrap: "break-all",
+          paddingRight: "5",
+        }}
+      >
+        {blockErrors.map((error) => (
+          <li key={Math.random()}>{t(`MDE.errorCodes.${error}`)}</li>
+        ))}
+        {blockWarnings.map((warning) => (
+          <li key={Math.random()}>{t(`MDE.warningCodes.${warning}`)}</li>
+        ))}
+      </div>
+    );
+    return (
+      <div>
+        <strong>
+          <button
+            className="popupDiceConfigurationButton"
+            onClick={(e) => {}}
+          />
+          <button
+            name="numberOfRandomPaths"
+            className="dicePlusButton"
+            onClick={this.increasePaths}
+          />
+          {bBlockHasErrors === true ? (
+            <div
+              style={{
+                width: "50",
+                height: "50",
+                position: "absolute",
+                right: "19",
+                top: "65",
+                display: "flex",
+                justifyContent: "space-evenly",
+              }}
+            >
+              <Tooltip
+                interactionKind="hover"
+                content={errorTooltipContent}
+                position={Position.RIGHT_TOP}
+              >
+                <img
+                  src={errorsIcon}
+                  alt="Error"
+                  style={{
+                    color: "rgba(255, 0, 0, 0.75)",
+                    width: "20",
+                    height: "20",
+                    cursor: "help",
+                  }}
+                />
+              </Tooltip>
+            </div>
+          ) : null}
+        </strong>
+        <strong>{this.getContents()}</strong>
+      </div>
+    );
+	}	
+}
+
+export default [block.blockNameEN.tokenize().toUpperFirst()/];
+[/file]
+[/template]

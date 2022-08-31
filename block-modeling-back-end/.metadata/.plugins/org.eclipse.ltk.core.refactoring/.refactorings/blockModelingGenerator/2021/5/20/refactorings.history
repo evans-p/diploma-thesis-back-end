@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 packages to &apos;BlockModelingBackend/src/main/resources&apos;&#x0A;- Original project: &apos;blockModelingGenerator&apos;&#x0A;- Destination element: &apos;BlockModelingBackend/src/main/resources&apos;&#x0A;- Original elements:&#x0A;     blockModelingGenerator/src/blockModelingGenerator&#x0A;     blockModelingGenerator/src/blockModelingGenerator.main" description="Copy packages" destination="=BlockModelingBackend/src\/main\/resources=/maven.pomderived=/true=/" element1="/src&lt;blockModelingGenerator" element2="/src&lt;blockModelingGenerator.main" flags="589830" fragments="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1621094062195" version="1.0"/>
+</session>

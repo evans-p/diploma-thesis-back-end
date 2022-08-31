@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="main" nsURI="BlockGenerate::main::main" startHeaderPosition="29" endHeaderPosition="175">
+    <input>
+      <takesTypesFrom href="http://www.example.org/blockModelingMetamodel#/"/>
+    </input>
+    <imports href="../files/actionBlockGenerator.emtl#/0"/>
+    <imports href="../files/actionBlockJSSnippetsGenerator.emtl#/0"/>
+    <imports href="../files/actionBlockCSSSnippetsGenerator.emtl#/0"/>
+    <imports href="../files/referenceBlockGenerator.emtl#/0"/>
+    <imports href="../files/referenceBlockJSSnippetsGenerator.emtl#/0"/>
+    <imports href="../files/referenceBlockCSSSnippetsGenerator.emtl#/0"/>
+    <imports href="../files/decisionBlockGenerator.emtl#/0"/>
+    <imports href="../files/decisionBlockJSSnippetsGenerator.emtl#/0"/>
+    <imports href="../files/decisionBlockCSSSnippetsGenerator.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateElement" visibility="Public" main="true">
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="mtl:TemplateInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../files/actionBlockGenerator.emtl#/0/actionBlockGenerator"/>
+          <argument xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/6/ActionBlock">
+              <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <body xsi:type="mtl:TemplateInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../files/actionBlockJSSnippetsGenerator.emtl#/0/actionBlockJSSnippetsGenerator"/>
+          <argument xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/6/ActionBlock">
+              <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <body xsi:type="mtl:TemplateInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../files/actionBlockCSSSnippetsGenerator.emtl#/0/actionBlockCSSSnippetsGenerator"/>
+          <argument xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/6/ActionBlock">
+              <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+        <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+          </source>
+          <argument xsi:type="ocl.ecore:TypeExp" eType="/6/ActionBlock">
+            <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+        </ifExpr>
+        <elseIf>
+          <body xsi:type="mtl:TemplateInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../files/referenceBlockGenerator.emtl#/0/referenceBlockGenerator"/>
+            <argument xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/6/ReferenceBlock">
+                <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <body xsi:type="mtl:TemplateInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../files/referenceBlockJSSnippetsGenerator.emtl#/0/referenceBlockJSSnippetsGenerator"/>
+            <argument xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/6/ReferenceBlock">
+                <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <body xsi:type="mtl:TemplateInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../files/referenceBlockCSSSnippetsGenerator.emtl#/0/referenceBlockCSSSnippetsGenerator"/>
+            <argument xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/6/ReferenceBlock">
+                <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/6/ReferenceBlock">
+              <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+          </ifExpr>
+        </elseIf>
+        <elseIf>
+          <body xsi:type="mtl:TemplateInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../files/decisionBlockGenerator.emtl#/0/decisionBlockGenerator"/>
+            <argument xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/6/DecisionBlock">
+                <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <body xsi:type="mtl:TemplateInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../files/decisionBlockJSSnippetsGenerator.emtl#/0/decisionBlockJSSnippetsGenerator"/>
+            <argument xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/6/DecisionBlock">
+                <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <body xsi:type="mtl:TemplateInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../files/decisionBlockCSSSnippetsGenerator.emtl#/0/decisionBlockCSSSnippetsGenerator"/>
+            <argument xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/6/DecisionBlock">
+                <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclAsType"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//Block"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="app" referredVariable="/0/generateElement/app">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/blockModelingMetamodel#//BlockApp/hasBlock"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/6/DecisionBlock">
+              <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+          </ifExpr>
+        </elseIf>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <parameter name="app">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateElement">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateElement"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="app">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="actionBlockGenerator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../files/actionBlockGenerator.emtl#/0/actionBlockGenerator"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="block">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="actionBlockJSSnippetsGenerator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../files/actionBlockJSSnippetsGenerator.emtl#/0/actionBlockJSSnippetsGenerator"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="block">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="actionBlockCSSSnippetsGenerator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../files/actionBlockCSSSnippetsGenerator.emtl#/0/actionBlockCSSSnippetsGenerator"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="block">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="referenceBlockGenerator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../files/referenceBlockGenerator.emtl#/0/referenceBlockGenerator"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="block">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="referenceBlockJSSnippetsGenerator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../files/referenceBlockJSSnippetsGenerator.emtl#/0/referenceBlockJSSnippetsGenerator"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="block">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="referenceBlockCSSSnippetsGenerator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../files/referenceBlockCSSSnippetsGenerator.emtl#/0/referenceBlockCSSSnippetsGenerator"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="block">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="decisionBlockGenerator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../files/decisionBlockGenerator.emtl#/0/decisionBlockGenerator"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="block">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="decisionBlockJSSnippetsGenerator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../files/decisionBlockJSSnippetsGenerator.emtl#/0/decisionBlockJSSnippetsGenerator"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="block">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="decisionBlockCSSSnippetsGenerator">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../files/decisionBlockCSSSnippetsGenerator.emtl#/0/decisionBlockCSSSnippetsGenerator"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="block">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="blockModelingMetamodel_BlockApp_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="blockModelingMetamodel_ActionBlock_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="blockModelingMetamodel_ReferenceBlock_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="blockModelingMetamodel_DecisionBlock_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="ActionBlock">
+      <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ActionBlock"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="ReferenceBlock">
+      <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//ReferenceBlock"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="DecisionBlock">
+      <referredType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//DecisionBlock"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/blockModelingMetamodel#//BlockApp"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateElement">
+      <details key="start" value="684"/>
+      <details key="end" value="1909"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateElement/%">
+      <details key="start" value="751"/>
+      <details key="end" value="1895"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateElement/%/%">
+      <details key="start" value="908"/>
+      <details key="end" value="966"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateElement/%/%/%">
+      <details key="start" value="908"/>
+      <details key="end" value="943"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateElement/%/%/%/%">
+      <details key="start" value="908"/>
+      <details key="end" value="920"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateElement/%/%/%/%/app">
+      <details key="start" value="908"/>
+      <details key="end" value="911"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateElement/%/%/%/%.1">
+      <details key="start" value="931"/>
+      <details key="end" value="942"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateElement/%/%.1">
+      <details key="start" value="968"/>
+      <details key="end" value="969"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateElement/%/%.2">
+      <details key="start" value="970"/>
+      <details key="end" value="1038"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateElement/%/%.2/%">
+      <details key="start" value="970"/>
+      <details key="end" value="1005"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateElement/%/%.2/%/%">
+      <details key="start" value="970"/>
+      <details key="end" value="982"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateElement/%/%.2/%/%/app">
+      <details key="start" value="970"/>
+      <details key="end" value="973"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateElement/%/%.2/%/%.1">
+      <details key="start" value="993"/>
+      <details key="end" value="1004"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateElement/%/%.3">
+      <details key="start" value="1040"/>
+      <details key="end" value="1041"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateElement/%/%.4">
+      <details key="start" value="1042"/>
+      <details key="end" value="1111"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateElement/%/%.4/%">
+      <details key="start" value="1042"/>
+      <details key="end" value="1077"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateElement/%/%.4/%/%">
+      <details key="start" value="1042"/>
+      <details key="end" value="1054"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateElement/%/%.4/%/%/app">
+      <details key="start" value="1042"/>
+      <details key="end" value="1045"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateElement/%/%.4/%/%.1">
+      <details key="start" value="1065"/>
+      <details key="end" value="1076"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateElement/%/%.5">
+      <details key="start" value="1113"/>
+      <details key="end" value="1115"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateElement/%/%.6">
+      <details key="start" value="755"/>
+      <details key="end" value="792"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateElement/%/%.6/%">
+      <details key="start" value="755"/>
+      <details key="end" value="767"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateElement/%/%.6/%/app">
+      <details key="start" value="755"/>
+      <details key="end" value="758"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateElement/%/%.6/%.1">
+      <details key="start" value="780"/>
+      <details key="end" value="791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateElement/%/%.7">
+      <details key="start" value="1115"/>
+      <details key="end" value="1506"/>
+      <details key="line" value="29"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateElement/%/%.7/%">
+      <details key="start" value="1281"/>
+      <details key="end" value="1345"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateElement/%/%.7/%/%">
+      <details key="start" value="1281"/>
+      <details key="end" value="1319"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateElement/%/%.7/%/%/%">
+      <details key="start" value="1281"/>
+      <details key="end" value="1293"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateElement/%/%.7/%/%/%/app">
+      <details key="start" value="1281"/>
+      <details key="end" value="1284"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateElement/%/%.7/%/%/%.1">
+      <details key="start" value="1304"/>
+      <details key="end" value="1318"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateElement/%/%.7/%.1">
+      <details key="start" value="1347"/>
+      <details key="end" value="1348"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateElement/%/%.7/%.2">
+      <details key="start" value="1349"/>
+      <details key="end" value="1423"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateElement/%/%.7/%.2/%">
+      <details key="start" value="1349"/>
+      <details key="end" value="1387"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateElement/%/%.7/%.2/%/%">
+      <details key="start" value="1349"/>
+      <details key="end" value="1361"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateElement/%/%.7/%.2/%/%/app">
+      <details key="start" value="1349"/>
+      <details key="end" value="1352"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateElement/%/%.7/%.2/%/%.1">
+      <details key="start" value="1372"/>
+      <details key="end" value="1386"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateElement/%/%.7/%.3">
+      <details key="start" value="1425"/>
+      <details key="end" value="1426"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateElement/%/%.7/%.4">
+      <details key="start" value="1427"/>
+      <details key="end" value="1502"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateElement/%/%.7/%.4/%">
+      <details key="start" value="1427"/>
+      <details key="end" value="1465"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateElement/%/%.7/%.4/%/%">
+      <details key="start" value="1427"/>
+      <details key="end" value="1439"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateElement/%/%.7/%.4/%/%/app">
+      <details key="start" value="1427"/>
+      <details key="end" value="1430"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateElement/%/%.7/%.4/%/%.1">
+      <details key="start" value="1450"/>
+      <details key="end" value="1464"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateElement/%/%.7/%.5">
+      <details key="start" value="1504"/>
+      <details key="end" value="1506"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateElement/%/%.7/%.6">
+      <details key="start" value="1123"/>
+      <details key="end" value="1163"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateElement/%/%.7/%.6/%">
+      <details key="start" value="1123"/>
+      <details key="end" value="1135"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateElement/%/%.7/%.6/%/app">
+      <details key="start" value="1123"/>
+      <details key="end" value="1126"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateElement/%/%.7/%.6/%.1">
+      <details key="start" value="1148"/>
+      <details key="end" value="1162"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateElement/%/%.8">
+      <details key="start" value="1506"/>
+      <details key="end" value="1890"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateElement/%/%.8/%">
+      <details key="start" value="1671"/>
+      <details key="end" value="1733"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateElement/%/%.8/%/%">
+      <details key="start" value="1671"/>
+      <details key="end" value="1708"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateElement/%/%.8/%/%/%">
+      <details key="start" value="1671"/>
+      <details key="end" value="1683"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateElement/%/%.8/%/%/%/app">
+      <details key="start" value="1671"/>
+      <details key="end" value="1674"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateElement/%/%.8/%/%/%.1">
+      <details key="start" value="1694"/>
+      <details key="end" value="1707"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateElement/%/%.8/%.1">
+      <details key="start" value="1735"/>
+      <details key="end" value="1736"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateElement/%/%.8/%.2">
+      <details key="start" value="1737"/>
+      <details key="end" value="1809"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateElement/%/%.8/%.2/%">
+      <details key="start" value="1737"/>
+      <details key="end" value="1774"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateElement/%/%.8/%.2/%/%">
+      <details key="start" value="1737"/>
+      <details key="end" value="1749"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateElement/%/%.8/%.2/%/%/app">
+      <details key="start" value="1737"/>
+      <details key="end" value="1740"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateElement/%/%.8/%.2/%/%.1">
+      <details key="start" value="1760"/>
+      <details key="end" value="1773"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateElement/%/%.8/%.3">
+      <details key="start" value="1811"/>
+      <details key="end" value="1812"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateElement/%/%.8/%.4">
+      <details key="start" value="1813"/>
+      <details key="end" value="1886"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateElement/%/%.8/%.4/%">
+      <details key="start" value="1813"/>
+      <details key="end" value="1850"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateElement/%/%.8/%.4/%/%">
+      <details key="start" value="1813"/>
+      <details key="end" value="1825"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateElement/%/%.8/%.4/%/%/app">
+      <details key="start" value="1813"/>
+      <details key="end" value="1816"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateElement/%/%.8/%.4/%/%.1">
+      <details key="start" value="1836"/>
+      <details key="end" value="1849"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateElement/%/%.8/%.5">
+      <details key="start" value="1888"/>
+      <details key="end" value="1890"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generateElement/%/%.8/%.6">
+      <details key="start" value="1514"/>
+      <details key="end" value="1553"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generateElement/%/%.8/%.6/%">
+      <details key="start" value="1514"/>
+      <details key="end" value="1526"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generateElement/%/%.8/%.6/%/app">
+      <details key="start" value="1514"/>
+      <details key="end" value="1517"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generateElement/%/%.8/%.6/%.1">
+      <details key="start" value="1539"/>
+      <details key="end" value="1552"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generateElement/%.1">
+      <details key="start" value="1896"/>
+      <details key="end" value="1897"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generateElement/app">
+      <details key="start" value="717"/>
+      <details key="end" value="731"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

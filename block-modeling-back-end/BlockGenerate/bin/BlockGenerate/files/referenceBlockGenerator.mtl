@@ -1,0 +1,32 @@
+[comment encoding = UTF-8 /]
+[module referenceBlockGenerator('platform:/resource/BlockModelingMetamodel/model/blockModelingMetamodel.ecore')]
+
+
+[template public referenceBlockGenerator(block : ReferenceBlock)]
+
+[file (block.eClass().name + '.js', false, 'UTF-8')]
+import React, {Component} from 'react';
+
+
+class [block.blockTitleEN.replace(' ', '')/] extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            blockErrors: props.blockErrors || ['['/][']'/],
+            blockWarnings: props.blockWarnings || ['['/][']'/],
+            errorsIcon: require('../../../../assets/mde/commands/Error-Warning.png'),
+            errorsDisplay: 'none',
+       	};
+	}
+
+
+	 handleOnChange(e) {
+	        this.setState({['['/]e.target.name[']'/]: e.target.value});
+	}
+}
+
+export default [block.blockTitleEN.replace(' ', '')/];
+
+[/file]
+
+[/template]

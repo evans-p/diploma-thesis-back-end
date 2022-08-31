@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module decisionBlockGenerator('platform:/resource/BlockModelingMetamodel/model/blockModelingMetamodel.ecore')]
+
+
+
+[template public decisionBlockGenerator(block : DecisionBlock)]
+
+[file ('DecisionBlock.js', false, 'UTF-8')]
+
+[/file]
+[/template]

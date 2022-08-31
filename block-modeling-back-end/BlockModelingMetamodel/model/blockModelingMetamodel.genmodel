@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/BlockModelingMetamodel/src-gen" creationIcons="false"
+    editDirectory="/BlockModelingMetamodel.edit/src-gen" editorDirectory="/BlockModelingMetamodel.editor/src-gen"
+    modelPluginID="BlockModelingMetamodel" modelName="BlockModelingMetamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>blockModelingMetamodel.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="BlockModelingMetamodel" disposableProviderFactory="true" ecorePackage="blockModelingMetamodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="blockModelingMetamodel.ecore#//Category">
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//Category/MOVEMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//Category/DETECTION"/>
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//Category/SOUND"/>
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//Category/TOOLS"/>
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//Category/VARIOUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="blockModelingMetamodel.ecore#//Cursor">
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//Cursor/DEFAULT"/>
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//Cursor/HELP"/>
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//Cursor/POINTER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="blockModelingMetamodel.ecore#//ImageBackgroundShape">
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//ImageBackgroundShape/CIRCLE"/>
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//ImageBackgroundShape/SQUARE"/>
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//ImageBackgroundShape/HEXAGON"/>
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//ImageBackgroundShape/OCTAGON"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="blockModelingMetamodel.ecore#//ComparisonType">
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//ComparisonType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//ComparisonType/SELECT"/>
+      <genEnumLiterals ecoreEnumLiteral="blockModelingMetamodel.ecore#//ComparisonType/INPUT"/>
+    </genEnums>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//BlockApp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//BlockApp/hasBlock"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="blockModelingMetamodel.ecore#//Block">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//Block/category"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//Block/backroundColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//Block/blockNameEL"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//Block/blockNameEN"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//ReferenceBlock">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ReferenceBlock/blockTitleEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ReferenceBlock/blockTitleEN"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ReferenceBlock/blockImage"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ReferenceBlock/imageBackroundShape"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ReferenceBlock/hasNextBlock"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ReferenceBlock/imageCursor"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ReferenceBlock/imageBackroundShapeColor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//ReferenceBlock/hasInfo"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//Information">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//Information/informationTextEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//Information/informationTextEN"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//Information/cursor"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//DecisionBlock">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//DecisionBlock/blockImage"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//DecisionBlock/numberOfColumns"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//DecisionBlock/blockImageCursor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//DecisionBlock/hasSettingsPopover"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//DecisionBlock/hasConfigurationPopover"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//ActionBlock">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ActionBlock/blockTitleEN"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ActionBlock/blockTitleEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ActionBlock/blockImage"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ActionBlock/hasPopover"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ActionBlock/popoverIcon"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ActionBlock/popoverHelpTextEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ActionBlock/popoverHelpTextEN"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ActionBlock/titleBackroundColor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//ActionBlock/hasInfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//ActionBlock/hasInput"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//ActionBlock/hasSettingsPopover"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="blockModelingMetamodel.ecore#//InputBlock">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//InputBlock/image"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//InputBlock/infoTextEN"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//InputBlock/infoTextEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//InputBlock/variableName"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//InputBlock/iconCursor"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//SelectInputBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//SelectInputBlock/hasOptions"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//TextInputBlock">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//TextInputBlock/defaultValueEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//TextInputBlock/defaultValueEN"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//IntegerInputBlock">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//IntegerInputBlock/noMinValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//IntegerInputBlock/noMaxValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//IntegerInputBlock/noDefaultValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//IntegerInputBlock/defaultValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//IntegerInputBlock/maxValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//IntegerInputBlock/minValue"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//FloatInputBlock">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//FloatInputBlock/noMaxValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//FloatInputBlock/noMinValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//FloatInputBlock/noDefaultValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//FloatInputBlock/maxValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//FloatInputBlock/defaultValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//FloatInputBlock/minValue"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="blockModelingMetamodel.ecore#//Popover">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//Popover/popoverTitleEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//Popover/popoverTitleEN"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//ConfigurationPopover">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//ConfigurationPopover/hasInput"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//SettingsPopover">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//SettingsPopover/hasForm"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="blockModelingMetamodel.ecore#//Form"/>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//PhrasesInputForm">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//PhrasesInputForm/placeholderEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//PhrasesInputForm/placeholderEN"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="blockModelingMetamodel.ecore#//LabeledInputForm">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledInputForm/variableNameEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledInputForm/variableNameEN"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//LabeledTextInputForm">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledTextInputForm/defaultValueEN"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledTextInputForm/defaultValueEL"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//LabeledIntegerInputForm">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledIntegerInputForm/defaultValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledIntegerInputForm/minValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledIntegerInputForm/maxValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledIntegerInputForm/noMaxValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledIntegerInputForm/noMinValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledIntegerInputForm/noDefaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//LabeledFloatInputForm">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledFloatInputForm/minValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledFloatInputForm/defaultValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledFloatInputForm/maxValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledFloatInputForm/noMaxValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledFloatInputForm/noMinValue"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//LabeledFloatInputForm/noDefaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//ParameterInputForm">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ParameterInputForm/defaultValueEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ParameterInputForm/defaultValueEN"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//ParameterInputForm/hasOptions"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//ConditionInputForm">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//ConditionInputForm/hasOptions"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//Option">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//Option/optionTextEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//Option/optionTextEN"/>
+    </genClasses>
+    <genClasses ecoreClass="blockModelingMetamodel.ecore#//ConditionOption">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ConditionOption/optionTextEL"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ConditionOption/optionTextEN"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ConditionOption/comparisonType"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute blockModelingMetamodel.ecore#//ConditionOption/comparators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blockModelingMetamodel.ecore#//ConditionOption/hasOptions"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
